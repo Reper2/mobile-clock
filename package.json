@@ -1,0 +1,24 @@
+{
+  "name": "desktop-clock",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Reper2/desktop-clock#readme",
+  "bugs": {
+    "url": "https://github.com/Reper2/desktop-clock/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reper2/desktop-clock.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "workbox-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^4.0.0",
+    "typescript": "^5.9.3"
+  }
+}
