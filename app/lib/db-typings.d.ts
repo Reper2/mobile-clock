@@ -35,14 +35,6 @@ declare namespace Database {
 
 export namespace Background {
   /**
-   * Terminal-generarted tree structure for background databases using `tree [directory_path] -J > [output_path]` command.
-   * The key is the name of the directory, and the value is an array of two objects:
-   * the first is the parent object containing the contents array,
-   * and the second is an object containing metadata about the directory.
-   */
-  type DatabaseStructure = { [key: string]: [Database.Obj1, Database.Obj2] };
-
-  /**
    * The configuration object for the background object.
    * Contains the element to which the background will be applied, the database of backgrounds,
    * and the list of branch names from switch-album that match the database keys.
@@ -56,12 +48,7 @@ export namespace Background {
     /**
      * The database of backgrounds, generated from the terminal command `tree [directory_path] -J > [output_path]` and imported as a JSON file.
      */
-    db: DatabaseStructure;
-    /**
-     * The list of branch names from switch-album that match the database keys.
-     * This is used to determine which backgrounds to display for each branch.
-     */
-    game: (keyof DatabaseStructure)[];
+    db: [Database.Obj1, Database.Obj2];
   }
 }
 

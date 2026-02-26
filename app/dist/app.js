@@ -11,29 +11,8 @@
 }
 const bg = {
     elem: document.getElementById("_bg"),
-    db: {
-        photos: await fetchDB("photos"),
-    },
-    game: ["photos"]
+    db: await fetchDB("photos")
 };
-class RandomPicker {
-    names;
-    constructor(names) {
-        this.names = names;
-    }
-    randomItem(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
-    randomName() {
-        return this.randomItem(this.names);
-    }
-    pick(getContents, useFile) {
-        const k = this.randomName();
-        const contents = getContents(k);
-        const file = this.randomItem(contents);
-        useFile(k, file);
-    }
-}
 const clock = document.getElementById("clock");
 function updateClock() {
     const now = new Date();
@@ -43,12 +22,11 @@ function updateClock() {
 }
 updateClock();
 $(function () {
-    const bgPicker = new RandomPicker(bg.game);
-    bgPicker.pick(k => bg.db[k][0].contents, (k, file) => {
-        bg.elem.style.backgroundImage =
-            `url('https://raw.githubusercontent.com/reper2/holiday-album/${k}/${file.name}')`;
-        console.log(`🎮Randomly selected background from ${k}:`, file.name);
-    });
+    const photo = Math.floor(Math.random() * bg.db[0].contents.length);
+    const file = bg.db[0].contents[photo];
+    bg.elem.style.backgroundImage =
+        `url('https://raw.githubusercontent.com/reper2/holiday-album/master/photos/${file.name}')`;
+    console.log(`🎮Randomly selected background from photos`, file.name);
 });
 export {};
 //# sourceMappingURL=app.js.map

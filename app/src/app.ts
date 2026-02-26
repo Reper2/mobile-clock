@@ -1,4 +1,4 @@
-import { Background, Database } from "../lib/db-typings";
+import { Background } from "../lib/db-typings";
 
 /**
  * Asynchronously fetch the contents of a json file.
@@ -19,35 +19,8 @@ async function fetchDB<T>(filename: string): Promise<T> {
 
 const bg: Background.Config = {
   elem: <HTMLBodyElement>document.getElementById("_bg"),
-  db: {
-    photos: await fetchDB("photos"),
-  },
-  game: ["photos"]
+  db: await fetchDB("photos")
 };
-
-type Name = string | number;
-
-class RandomPicker {
-  constructor(private names: Name[]) { }
-
-  private randomItem<T>(arr: T[]): T {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  private randomName(): Name {
-    return this.randomItem(this.names);
-  }
-
-  pick<T>(
-    getContents: (name: Name) => T[],
-    useFile: (name: Name, file: T) => void,
-  ): void {
-    const k = this.randomName();
-    const contents = getContents(k);
-    const file = this.randomItem(contents);
-    useFile(k, file);
-  }
-}
 
 const clock = document.getElementById("clock") as HTMLSpanElement;
 
@@ -63,13 +36,9 @@ function updateClock() {
 
 updateClock();
 $(function () {
-  const bgPicker = new RandomPicker(bg.game);
-  bgPicker.pick(
-    k => bg.db[k][0].contents,
-    (k, file: Database.File) => {
-      bg.elem.style.backgroundImage =
-        `url('https://raw.githubusercontent.com/reper2/holiday-album/${k}/${file.name}')`;
-      console.log(`🎮Randomly selected background from ${k}:`, file.name);
-    },
-  );
+  const photo = Math.floor(Math.random() * bg.db[0].contents.length);
+  const file = bg.db[0].contents[photo];
+  bg.elem.style.backgroundImage =
+    `url('https://raw.githubusercontent.com/reper2/holiday-album/master/photos/${file.name}')`;
+  console.log(`🎮Randomly selected background from photos`, file.name);
 });
