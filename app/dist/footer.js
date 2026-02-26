@@ -10,7 +10,7 @@ const footer = {
     }
 };
 footer.cr.license.title = "View License (Alt+L)";
-footer.cr.license.href = "https://github.com/Reper2/desktop-clock/blob/master/LICENSE";
+footer.cr.license.href = "https://github.com/Reper2/mobile-clock/blob/master/LICENSE";
 footer.cr.license.target = "_blank";
 footer.cr.license.rel = "noopener noreferrer";
 footer.cr.txt.textContent = "(c) 2026 Reper2";

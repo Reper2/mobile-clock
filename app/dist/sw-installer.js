@@ -1,7 +1,7 @@
 ﻿"use strict";
 window.addEventListener("load", () => {
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/desktop-clock/sw.js")
+        navigator.serviceWorker.register("/mobile-clock/sw.js")
             .then(reg => {
             console.groupCollapsed("Service Worker Status");
             if (reg.installing)
