@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mobile Clock</title>
+  <link href="./assets/main.css" rel="stylesheet" type="text/css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGBMJBFWQF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EGBMJBFWQF');
+  </script>
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+  <link rel="manifest" type="application/manifest+json" href="./site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta id="meta-title" property="og:title" content="Mobile Clock">
+  <meta id="meta-desc" property="og:description"
+    content="A basic mobile clock web app with 3000+ different backgrounds. You don't get to choose though. Tap the Share button and press Add to Home Screen to use it as a PWA.">
+  <meta id="meta-image" name="og:image" itemprop="image" content="https://raw.githubusercontent.com/Reper2/switch-album/acnh/2021020916540700_c.jpg">
+  <meta property="og:site_name" content="Mobile Clock | reper2.github.io">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14d8ee">
+</head>
+
+<body id="_bg">
+  <header>Mobile Clock</header>
+  <main>
+    <span id="clock"></span>
+  </main>
+  <footer id="footer" class="bottom"></footer>
+</body>
+<script type="application/javascript" src="./app/lib/jquery.min.js"></script>
+<script type="module" src="./app/dist/sw-installer.js"></script>
+<script type="module" src="./app/dist/app.js"></script>
+<script type="module" src="./app/dist/footer.js"></script>
+
+</html>

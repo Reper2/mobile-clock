@@ -1,0 +1,113 @@
+/* tags and other universal styles */
+@font-face {
+  font-family: 'Hylia Serif';
+  src: url('HyliaSerifBeta-Regular.otf') format('opentype');
+}
+
+header {
+  font-size: clamp(2rem, 5vw, 5rem);
+  background: linear-gradient(45deg,
+      cyan,
+      #A5F2F3,
+      #B3E7F4,
+      #DDF9F1,
+      #E25C46,
+      #E42217,
+      #CF1020,
+      #AA0033);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* required for Chrome/Safari */
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* Safari compatibility */
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #000;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+header,
+main,
+footer {
+  text-align: -webkit-center;
+}
+
+header,
+footer
+h1,
+h2,
+h3,
+p,
+a,
+span {
+  font-family: 'Hylia Serif', serif;
+  color: white;
+  -webkit-text-stroke-width: 0.1vmin;
+  -webkit-text-stroke-color: black;
+}
+
+a {
+  text-decoration: none
+}
+
+footer {
+  font-size: clamp(1.2rem, 2vmin, 2.2rem);
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+#clock {
+  font-size: clamp(8rem, 15vw, 10rem);
+  text-align: -webkit-center;
+  background: linear-gradient(to right,
+      cyan,
+      #A5F2F3,
+      #B3E7F4,
+      #DDF9F1,
+      #E25C46,
+      #E42217,
+      #CF1020,
+      #AA0033,
+      cyan);
+  background-size: 200% 100%;
+  animation: gradient-scroll 40s linear infinite;
+
+  /* clip gradient to text */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* hide actual text color */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient-scroll {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 200% 50%;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.gold {
+  color: gold
+}
