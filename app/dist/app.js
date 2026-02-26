@@ -1,6 +1,6 @@
 ﻿async function fetchDB(filename) {
     try {
-        const res = await fetch(`/app/databases/${filename}.json`);
+        const res = await fetch(`/mobile-clock/app/databases/${filename}.json`);
         const data = await res.text();
         return JSON.parse(data);
     }
