@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
 
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/mobile-clock/sw.js")
+    navigator.serviceWorker.register("./sw.js")
       .then(reg => {
 
         console.groupCollapsed("Service Worker Status");

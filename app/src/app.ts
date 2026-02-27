@@ -8,7 +8,7 @@ import { Background } from "../lib/db-typings";
  */
 async function fetchDB<T>(filename: string): Promise<T> {
   try {
-    const res = await fetch(`/mobile-clock/app/databases/${filename}.json`);
+    const res = await fetch(`./app/databases/${filename}.json`);
     const data = await res.text();
     return <T>JSON.parse(data);
   } catch (e) {
