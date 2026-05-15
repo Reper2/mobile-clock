@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Mobile Clock</title>
   <link href="./assets/main.css" rel="stylesheet" type="text/css">
+  <link href="./assets/eggs.css" rel="stylesheet" type="text/css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGBMJBFWQF"></script>
   <script>
@@ -29,13 +30,25 @@
 </head>
 
 <body id="_bg">
+  <div class="egg" data-egg="mClock_aboveHeader">
+    <img class="egg-box" src="./images/hidden_block.png" alt="Egg - Hidden Block">
+    <img class="egg-cracked" src="./images/moon.png" alt="Egg - Moon">
+  </div>
+  <div class="egg" data-egg="mClock_aboveClock">
+      <img class="egg-box" src="./images/hidden_block.png" alt="Egg - Hidden Block">
+      <img class="egg-cracked" src="./images/moon.png" alt="Egg - Moon">
+    </div>
   <header>Mobile Clock</header>
   <main>
     <span id="clock"></span>
   </main>
+  <div class="egg" data-egg="mClock_aboveFooter">
+    <img class="egg-box" src="./images/hidden_block.png" alt="Egg - Hidden Block">
+    <img class="egg-cracked" src="./images/moon.png" alt="Egg - Moon">
+  </div>
   <footer id="footer" class="bottom"></footer>
 </body>
-<script type="application/javascript" src="./app/lib/jquery.min.js"></script>
+<script type="application/javascript" src="/app/lib/jquery-4.0.0.min.js"></script>
 <script type="module" src="./app/dist/sw-installer.js"></script>
 <script type="module" src="./app/dist/app.js"></script>
 <script type="module" src="./app/dist/footer.js"></script>

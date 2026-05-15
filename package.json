@@ -1,24 +1,18 @@
 {
-  "name": "desktop-clock",
+  "name": "mobile-clock",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/Reper2/desktop-clock#readme",
-  "bugs": {
-    "url": "https://github.com/Reper2/desktop-clock/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Reper2/desktop-clock.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "workbox-config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Fun and simple clock for mobile devices, built with TypeScript and jQuery.",
   "devDependencies": {
     "@types/jquery": "^4.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "javascript-obfuscator": "^5.4.2",
+    "workbox-cli": "^7.4.1"
+  },
+  "scripts": {
+    "build": "tsc -p ./app/tsconfig.json",
+    "resolveModules": "node ./cmd/module-refiner.js",
+    "obfuscate": "javascript-obfuscator ./app/dist --output ./app/dist --compact true --self-defending true"
   }
 }
