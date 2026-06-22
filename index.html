@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Mobile Clock</title>
-  <link href="./assets/main.css" rel="stylesheet" type="text/css">
+  <link href="/assets/clock.css" rel="stylesheet" type="text/css">
+  <link href="/assets/main.css" rel="stylesheet" type="text/css">
   <link href="/assets/eggs.css" rel="stylesheet" type="text/css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGBMJBFWQF"></script>
@@ -23,7 +24,8 @@
   <meta id="meta-title" property="og:title" content="Mobile Clock">
   <meta id="meta-desc" property="og:description"
     content="A basic mobile clock web app with 400+ different backgrounds. You don't get to choose though. Tap the Share button and press Add to Home Screen to use it as a PWA.">
-  <meta id="meta-image" name="og:image" itemprop="image" content="https://raw.githubusercontent.com/Reper2/switch-album/acnh/2021020916540700_c.jpg">
+  <meta id="meta-image" name="og:image" itemprop="image"
+    content="https://raw.githubusercontent.com/Reper2/switch-album/acnh/2021020916540700_c.jpg">
   <meta property="og:site_name" content="Mobile Clock | reper2.github.io">
   <meta property="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#14d8ee">
@@ -42,7 +44,7 @@
   </script>
 </head>
 
-<body id="_bg">
+<body id="_bg" data-bg-force="holidays">
   <div class="egg" data-egg="mClock_aboveHeader"></div>
   <header>Mobile Clock</header>
   <main>
@@ -52,7 +54,21 @@
   <div class="egg" data-egg="mClock_aboveFooter"></div>
   <footer id="footer" class="bottom"></footer>
 </body>
-<script type="module" src="/app/dist/eggs/index.js"></script> <!-- Fetching from main website -->
-<script type="module" src="./app/dist/index.js"></script>
+<script type="module" src="/app/dist/index.js"></script>
+<script defer>
+  const clock = document.getElementById("clock");
+
+  function updateClock() {
+    const now = new Date();
+    clock.textContent = now.toLocaleTimeString();
+
+    /* ms remaining until next second */
+    const delay = 1000 - now.getMilliseconds();
+
+    setTimeout(updateClock, delay);
+  }
+
+  updateClock();
+</script>
 
 </html>

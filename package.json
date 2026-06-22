@@ -11,8 +11,6 @@
     "workbox-cli": "^7.4.1"
   },
   "scripts": {
-    "build": "tsc -p ./app/tsconfig.json",
-    "resolveModules": "node ./cmd/module-refiner.js",
-    "obfuscate": "javascript-obfuscator ./app/dist --output ./app/dist --compact true --self-defending true"
+    "build": "workbox generateSW"
   }
 }
